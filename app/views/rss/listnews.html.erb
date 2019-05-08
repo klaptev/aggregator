@@ -1,0 +1,28 @@
+<% if @news.blank? %>
+<p>There are not any news in the system.</p>
+<% else %>
+<p>These are the current RSS Feeds in our system</p>
+
+<table style="width:35%">
+   
+<ul id = "RSSs">
+   <tr>
+    <th>Title</th>
+    <th>CreatedAt</th>
+    <th>Feed_ID</th>
+    <th>SumCheck</th>
+   </tr>
+   <% @news.each do |c| %>
+   <tr>
+   <td><%= c.title %></td>
+   <td><%= c.created_at %></td>
+   <th><%= c.feed_id %></th>
+   <td><%= c.sumcheck %></td>
+   </tr>
+   <% end %>
+</ul>
+
+</table>
+
+<% end %>
+<p><%= link_to "Add new RSS", {:action => 'new' }%></p>

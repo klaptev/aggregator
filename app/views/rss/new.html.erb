@@ -1,0 +1,20 @@
+<h1>Add new RSS Source</h1>
+
+<%= form_tag :action => 'create' do %>
+
+<p><label for = "rss_link">Link</label>:
+
+<%= text_field 'rss', 'link' %></p>
+
+
+
+<p><label for = "rss_group_id">Group_Id</label>:
+
+<%= text_field 'rss', 'group_id' %></p>
+
+
+
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>
